@@ -1,0 +1,236 @@
+/* Fluent Index Design - Windows 11 Native */
+
+.description {
+    color: var(--fluent-text-secondary);
+    margin-bottom: 40px;
+    line-height: 1.7;
+    font-size: 18px;
+    background: var(--fluent-surface-primary);
+    padding: 32px;
+    border-radius: var(--fluent-radius-xxlarge);
+    border: 2px solid var(--fluent-border-primary);
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--fluent-card-shadow);
+    transition: var(--fluent-transition-normal);
+}
+
+.description:hover {
+    box-shadow: var(--fluent-card-shadow-hover);
+    transform: translateY(-3px);
+    border-color: var(--fluent-border-focus);
+}
+
+.description::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--fluent-primary), var(--fluent-secondary), var(--fluent-accent));
+}
+
+.description::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(45deg, var(--fluent-primary), transparent);
+    opacity: 0.1;
+    border-radius: 50%;
+    transform: translate(30px, -30px);
+}
+
+.nav-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.nav-btn {
+    background: linear-gradient(135deg, var(--fluent-primary), var(--fluent-primary-dark));
+    color: var(--fluent-text-on-primary);
+    padding: 20px 40px;
+    text-decoration: none;
+    border-radius: var(--fluent-radius-xxlarge);
+    font-size: 18px;
+    font-weight: 600;
+    transition: var(--fluent-transition-normal);
+    box-shadow: var(--fluent-card-shadow);
+    position: relative;
+    overflow: hidden;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 220px;
+    justify-content: center;
+    min-height: 56px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.nav-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--fluent-surface-primary);
+    opacity: 0;
+    transition: var(--fluent-transition-fast);
+}
+
+.nav-btn:hover::before {
+    opacity: 0.1;
+}
+
+.nav-btn:hover {
+    background: linear-gradient(135deg, var(--fluent-primary-dark), var(--fluent-primary));
+    transform: translateY(-4px);
+    box-shadow: var(--fluent-card-shadow-hover);
+    color: var(--fluent-text-on-primary);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.nav-btn:active {
+    transform: translateY(-2px);
+    box-shadow: var(--fluent-card-shadow);
+}
+
+.year-selector {
+    background: var(--fluent-surface-primary);
+    padding: 32px;
+    border-radius: var(--fluent-radius-xxlarge);
+    margin: 40px auto;
+    text-align: center;
+    border: 2px solid var(--fluent-border-primary);
+    max-width: 800px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    box-shadow: var(--fluent-card-shadow);
+    position: relative;
+    overflow: hidden;
+    transition: var(--fluent-transition-normal);
+}
+
+.year-selector:hover {
+    box-shadow: var(--fluent-card-shadow-hover);
+    transform: translateY(-3px);
+    border-color: var(--fluent-border-focus);
+}
+
+.year-selector::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--fluent-primary), var(--fluent-secondary), var(--fluent-accent));
+}
+
+.year-selector label {
+    margin: 0;
+    font-weight: 600;
+    color: var(--fluent-text-primary);
+    font-size: 16px;
+}
+
+.year-selector select,
+.year-selector input {
+    width: auto;
+    min-width: 160px;
+    padding: 12px 16px;
+    border: 2px solid var(--fluent-border-secondary);
+    border-radius: var(--fluent-radius-xlarge);
+    background: var(--fluent-surface-primary);
+    color: var(--fluent-text-primary);
+    font-size: 16px;
+    transition: var(--fluent-transition-normal);
+    font-weight: 500;
+}
+
+.year-selector select:focus,
+.year-selector input:focus {
+    border-color: var(--fluent-border-focus);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(22, 101, 52, 0.1);
+    transform: translateY(-2px);
+}
+
+.year-selector button {
+    width: auto;
+    background: linear-gradient(135deg, var(--fluent-primary), var(--fluent-primary-dark));
+    color: var(--fluent-text-on-primary);
+    border: none;
+    padding: 12px 20px;
+    border-radius: var(--fluent-radius-xlarge);
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--fluent-transition-normal);
+    box-shadow: var(--fluent-card-shadow);
+    min-height: 48px;
+}
+
+.year-selector button:hover {
+    background: linear-gradient(135deg, var(--fluent-primary-dark), var(--fluent-primary));
+    transform: translateY(-2px);
+    box-shadow: var(--fluent-card-shadow-hover);
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 32px;
+    margin-top: 56px;
+    text-align: right;
+}
+
+.feature {
+    background: var(--fluent-surface-primary);
+    padding: 32px;
+    border-radius: var(--fluent-radius-xxlarge);
+    border: 2px solid var(--fluent-border-primary);
+    transition: var(--fluent-transition-normal);
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--fluent-card-shadow);
+}
+
+.feature::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--fluent-primary), var(--fluent-secondary), var(--fluent-accent));
+}
+
+.feature:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--fluent-card-shadow-hover);
+    border-color: var(--fluent-border-focus);
+}
+
+.feature h3 {
+    color: var(--fluent-text-primary);
+    font-size: 22px;
+    margin-bottom: 16px;
+    font-weight: 600;
+}
+
+.feature p {
+    color: var(--fluent-text-secondary);
+    line-height: 1.7;
+    font-size: 16px;
+}

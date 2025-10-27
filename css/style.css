@@ -1,0 +1,674 @@
+/* Fluent Design System - Saudi Green Identity */
+:root {
+    /* Saudi Green Color Palette */
+    --fluent-primary: #166534;
+    /* أخضر سعودي عميق */
+    --fluent-primary-dark: #14532D;
+    /* أخضر سعودي داكن جداً */
+    --fluent-primary-light: #16A34A;
+    /* أخضر سعودي فاتح */
+    --fluent-secondary: #15803D;
+    /* أخضر سعودي متوسط */
+    --fluent-secondary-dark: #166534;
+    /* أخضر سعودي داكن */
+    --fluent-secondary-light: #22C55E;
+    /* أخضر سعودي فاتح جداً */
+    --fluent-accent: #059669;
+    /* أخضر سعودي مميز */
+    --fluent-accent-light: #10B981;
+    /* أخضر سعودي فاتح مميز */
+
+    /* Surface Colors - Clear Hierarchy */
+    --fluent-surface-primary: #FFFFFF;
+    /* أبيض نقي للبطاقات */
+    --fluent-surface-secondary: #F8FAFC;
+    /* رمادي فاتح جداً للخلفية */
+    --fluent-surface-tertiary: #E2E8F0;
+    /* رمادي فاتح للعناصر الثانوية */
+    --fluent-surface-quaternary: #CBD5E1;
+    /* رمادي متوسط للحدود */
+    --fluent-surface-elevated: #FFFFFF;
+    /* أبيض للعناصر المرتفعة */
+
+    /* Text Colors - High Contrast */
+    --fluent-text-primary: #2D3748;
+    /* رمادي غامق للعناوين */
+    --fluent-text-secondary: #4A5568;
+    /* رمادي متوسط للنصوص */
+    --fluent-text-tertiary: #718096;
+    /* رمادي فاتح للنصوص الثانوية */
+    --fluent-text-disabled: #A0AEC0;
+    /* رمادي فاتح للنصوص المعطلة */
+    --fluent-text-on-primary: #FFFFFF;
+    /* أبيض على الألوان الأساسية */
+
+    /* Border Colors - Saudi Green */
+    --fluent-border-primary: #E5E7EB;
+    /* رمادي فاتح للحدود */
+    --fluent-border-secondary: #D1D5DB;
+    /* رمادي متوسط للحدود */
+    --fluent-border-focus: #166534;
+    /* أخضر سعودي للتركيز */
+    --fluent-border-accent: #15803D;
+    /* أخضر سعودي للتمييز */
+
+    /* Status Colors - Saudi Green Only */
+    --fluent-success: #166534;
+    /* أخضر سعودي عميق للنجاح */
+    --fluent-success-light: #D1FAE5;
+    /* أخضر فاتح */
+    --fluent-warning: #15803D;
+    /* أخضر سعودي متوسط للتحذير */
+    --fluent-warning-light: #D1FAE5;
+    /* أخضر فاتح */
+    --fluent-error: #14532D;
+    /* أخضر سعودي داكن للخطأ */
+    --fluent-error-light: #D1FAE5;
+    /* أخضر فاتح */
+    --fluent-info: #166534;
+    /* أخضر سعودي عميق للمعلومات */
+    --fluent-info-light: #D1FAE5;
+    /* أخضر فاتح */
+
+    /* Professional Shadows - Enhanced Depth */
+    --fluent-shadow-2: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    --fluent-shadow-4: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    --fluent-shadow-8: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    --fluent-shadow-16: 0 15px 35px rgba(0, 0, 0, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);
+    --fluent-shadow-28: 0 20px 40px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.06);
+    --fluent-shadow-64: 0 25px 50px rgba(0, 0, 0, 0.15), 0 10px 20px rgba(0, 0, 0, 0.1);
+
+    /* Gradient Shadows for Cards - Saudi Green */
+    --fluent-card-shadow: 0 4px 20px rgba(22, 101, 52, 0.15), 0 2px 8px rgba(21, 128, 61, 0.1);
+    --fluent-card-shadow-hover: 0 8px 32px rgba(22, 101, 52, 0.2), 0 4px 16px rgba(21, 128, 61, 0.15);
+
+    /* Border Radius - Modern */
+    --fluent-radius-small: 4px;
+    --fluent-radius-medium: 8px;
+    --fluent-radius-large: 12px;
+    --fluent-radius-xlarge: 16px;
+    --fluent-radius-xxlarge: 24px;
+
+    /* Professional Transitions */
+    --fluent-transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+    --fluent-transition-normal: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    --fluent-transition-slow: 350ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* Legacy Support (for compatibility) */
+    --primary-color: var(--fluent-primary);
+    --primary-dark: var(--fluent-primary-dark);
+    --primary-light: var(--fluent-primary-light);
+    --secondary-color: var(--fluent-secondary);
+    --accent-color: var(--fluent-accent);
+    --accent-dark: var(--fluent-primary-dark);
+    --light-gray: var(--fluent-surface-tertiary);
+    --dark-text: var(--fluent-text-primary);
+    --success-color: var(--fluent-success);
+    --warning-color: var(--fluent-warning);
+    --danger-color: var(--fluent-error);
+    --info-color: var(--fluent-info);
+    --white: var(--fluent-surface-primary);
+    --shadow: var(--fluent-shadow-2);
+    --shadow-lg: var(--fluent-shadow-8);
+    --border-radius: var(--fluent-radius-large);
+    --border-radius-lg: var(--fluent-radius-xlarge);
+    --transition: var(--fluent-transition-normal);
+}
+
+body {
+    font-family: 'Segoe UI Variable', 'Segoe UI', 'Tajawal', -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', sans-serif;
+    background: linear-gradient(135deg, #F8FAFC 0%, #E2E8F0 25%, #CBD5E1 50%, #E2E8F0 75%, #F8FAFC 100%);
+    background-attachment: fixed;
+    color: var(--fluent-text-primary);
+    margin: 0;
+    padding: 20px;
+    direction: rtl;
+    text-align: right;
+    font-size: 14px;
+    line-height: 1.5;
+    min-height: 100vh;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: var(--fluent-surface-primary);
+    padding: 32px;
+    border-radius: var(--fluent-radius-xxlarge);
+    box-shadow: var(--fluent-card-shadow);
+    backdrop-filter: blur(20px);
+    border: 2px solid rgba(74, 144, 226, 0.1);
+    position: relative;
+    overflow: hidden;
+    transition: var(--fluent-transition-normal);
+}
+
+.container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--fluent-primary), var(--fluent-secondary), var(--fluent-accent));
+    opacity: 0.8;
+}
+
+.container:hover {
+    box-shadow: var(--fluent-card-shadow-hover);
+    transform: translateY(-4px);
+    border-color: rgba(74, 144, 226, 0.2);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--fluent-text-primary);
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 8px;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: var(--fluent-text-primary);
+}
+
+h2 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+/* Navigation Bar - Professional Gradient Design */
+.nav-bar {
+    background: linear-gradient(135deg, var(--fluent-primary) 0%, var(--fluent-secondary) 100%);
+    color: var(--fluent-text-on-primary);
+    padding: 20px 24px;
+    border-radius: var(--fluent-radius-xxlarge);
+    text-align: center;
+    margin-bottom: 32px;
+    box-shadow: var(--fluent-card-shadow);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    transition: var(--fluent-transition-normal);
+}
+
+.nav-bar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--fluent-accent-light), var(--fluent-secondary-light), var(--fluent-primary-light));
+    opacity: 0.9;
+}
+
+.nav-bar:hover {
+    box-shadow: var(--fluent-card-shadow-hover);
+    transform: translateY(-2px);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.nav-bar a {
+    color: var(--fluent-text-on-primary);
+    text-decoration: none;
+    margin: 0 16px;
+    font-weight: 500;
+    transition: var(--fluent-transition-fast);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 20px;
+    border-radius: var(--fluent-radius-large);
+    position: relative;
+    z-index: 1;
+    font-size: 14px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.nav-bar a:hover {
+    color: var(--fluent-text-on-primary);
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.nav-bar a:active {
+    transform: translateY(0);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+/* Buttons - Fluent Design */
+button {
+    background: var(--fluent-primary);
+    color: var(--fluent-surface-primary);
+    padding: 10px 20px;
+    border: none;
+    border-radius: var(--fluent-radius-large);
+    cursor: pointer;
+    margin: 0 8px;
+    font-weight: 500;
+    transition: var(--fluent-transition-fast);
+    font-family: inherit;
+    font-size: 14px;
+    box-shadow: var(--fluent-shadow-2);
+    position: relative;
+    overflow: hidden;
+    min-height: 32px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--fluent-surface-primary);
+    opacity: 0;
+    transition: var(--fluent-transition-fast);
+}
+
+button:hover::before {
+    opacity: 0.1;
+}
+
+button:hover {
+    background: var(--fluent-primary-dark);
+    transform: translateY(-1px);
+    box-shadow: var(--fluent-shadow-4);
+}
+
+button:active {
+    transform: translateY(0);
+    box-shadow: var(--fluent-shadow-2);
+}
+
+button:focus {
+    outline: 2px solid var(--fluent-border-focus);
+    outline-offset: 2px;
+}
+
+button.secondary {
+    background: var(--fluent-surface-primary);
+    color: var(--fluent-text-primary);
+    border: 1px solid var(--fluent-border-secondary);
+}
+
+button.secondary:hover {
+    background: var(--fluent-surface-tertiary);
+    border-color: var(--fluent-border-focus);
+}
+
+button.secondary::before {
+    background: var(--fluent-primary);
+}
+
+button.secondary:hover::before {
+    opacity: 0.05;
+}
+
+/* Forms - Fluent Design */
+select,
+input {
+    padding: 8px 12px;
+    border: 1px solid var(--fluent-border-secondary);
+    border-radius: var(--fluent-radius-large);
+    margin: 0 8px;
+    background: var(--fluent-surface-primary);
+    font-family: inherit;
+    width: 100%;
+    box-sizing: border-box;
+    transition: var(--fluent-transition-fast);
+    font-size: 14px;
+    color: var(--fluent-text-primary);
+    min-height: 32px;
+}
+
+select:focus,
+input:focus {
+    outline: none;
+    border-color: var(--fluent-border-focus);
+    box-shadow: 0 0 0 2px rgba(22, 101, 52, 0.1);
+    transform: translateY(-1px);
+}
+
+select:hover,
+input:hover {
+    border-color: var(--fluent-border-focus);
+}
+
+label {
+    font-weight: 500;
+    margin-right: 8px;
+    color: var(--fluent-text-primary);
+    display: block;
+    margin-bottom: 6px;
+    font-size: 14px;
+}
+
+/* Responsive Design - Fluent */
+@media (max-width: 1200px) {
+    .container {
+        max-width: 95%;
+        padding: 24px;
+    }
+}
+
+@media (max-width: 992px) {
+    .container {
+        padding: 20px;
+    }
+
+    .nav-bar a {
+        margin: 0 12px;
+        padding: 10px 16px;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 8px;
+        font-size: 13px;
+    }
+
+    .container {
+        padding: 16px;
+        margin: 8px;
+    }
+
+    .nav-bar {
+        padding: 12px 16px;
+    }
+
+    .nav-bar a {
+        margin: 0 6px;
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+
+    button {
+        padding: 8px 16px;
+        font-size: 13px;
+        margin: 4px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    h3 {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 576px) {
+    body {
+        padding: 4px;
+    }
+
+    .container {
+        padding: 12px;
+        margin: 4px;
+    }
+
+    .nav-bar {
+        padding: 8px 12px;
+    }
+
+    .nav-bar a {
+        display: block;
+        margin: 4px 0;
+        text-align: center;
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+
+    h3 {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 400px) {
+    .container {
+        padding: 8px;
+    }
+
+    .nav-bar a {
+        font-size: 11px;
+        padding: 6px;
+    }
+
+    button {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+
+    h1 {
+        font-size: 18px;
+    }
+}
+
+/* Animation Classes - Fluent Design */
+.fade-in {
+    animation: fadeIn 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.slide-in-right {
+    animation: slideInRight 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(16px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.slide-in-left {
+    animation: slideInLeft 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-16px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.scale-in {
+    animation: scaleIn 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Fluent Micro-interactions */
+.fluent-hover {
+    transition: var(--fluent-transition-fast);
+}
+
+.fluent-hover:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--fluent-shadow-4);
+}
+
+.fluent-press {
+    transition: var(--fluent-transition-fast);
+}
+
+.fluent-press:active {
+    transform: translateY(0);
+    box-shadow: var(--fluent-shadow-2);
+}
+
+/* Utility Classes - Fluent Design */
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.mb-16 {
+    margin-bottom: 16px;
+}
+
+.mb-24 {
+    margin-bottom: 24px;
+}
+
+.mb-32 {
+    margin-bottom: 32px;
+}
+
+.mt-16 {
+    margin-top: 16px;
+}
+
+.mt-24 {
+    margin-top: 24px;
+}
+
+.p-16 {
+    padding: 16px;
+}
+
+.p-24 {
+    padding: 24px;
+}
+
+.shadow-fluent-2 {
+    box-shadow: var(--fluent-shadow-2);
+}
+
+.shadow-fluent-4 {
+    box-shadow: var(--fluent-shadow-4);
+}
+
+.shadow-fluent-8 {
+    box-shadow: var(--fluent-shadow-8);
+}
+
+.shadow-fluent-16 {
+    box-shadow: var(--fluent-shadow-16);
+}
+
+.radius-small {
+    border-radius: var(--fluent-radius-small);
+}
+
+.radius-medium {
+    border-radius: var(--fluent-radius-medium);
+}
+
+.radius-large {
+    border-radius: var(--fluent-radius-large);
+}
+
+.radius-xlarge {
+    border-radius: var(--fluent-radius-xlarge);
+}
+
+/* Fluent Surface Styles */
+.surface-primary {
+    background: var(--fluent-surface-primary);
+}
+
+.surface-secondary {
+    background: var(--fluent-surface-secondary);
+}
+
+.surface-tertiary {
+    background: var(--fluent-surface-tertiary);
+}
+
+.surface-quaternary {
+    background: var(--fluent-surface-quaternary);
+}
+
+/* Fluent Text Styles */
+.text-primary {
+    color: var(--fluent-text-primary);
+}
+
+.text-secondary {
+    color: var(--fluent-text-secondary);
+}
+
+.text-tertiary {
+    color: var(--fluent-text-tertiary);
+}
+
+.text-disabled {
+    color: var(--fluent-text-disabled);
+}

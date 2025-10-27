@@ -1,0 +1,590 @@
+/* Fluent Input Design - Windows 11 Native */
+
+/* Page Header - Fluent Design */
+.page-header {
+    text-align: center;
+    margin-bottom: 32px;
+    padding: 24px 0;
+    background: linear-gradient(135deg, var(--fluent-primary), var(--fluent-secondary));
+    border-radius: var(--fluent-radius-xxlarge);
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--fluent-card-shadow);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.page-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--fluent-accent-light), var(--fluent-secondary-light), var(--fluent-primary-light));
+    opacity: 0.9;
+}
+
+.page-header::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), transparent);
+    pointer-events: none;
+}
+
+.page-header h1 {
+    color: var(--fluent-text-on-primary);
+    font-size: 28px;
+    margin: 0;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 1;
+}
+
+/* Year Selector - Fluent Design */
+.year-selector {
+    background: var(--fluent-surface-primary);
+    padding: 24px;
+    border-radius: var(--fluent-radius-xxlarge);
+    box-shadow: var(--fluent-card-shadow);
+    margin-bottom: 24px;
+    border: 2px solid var(--fluent-border-primary);
+    transition: var(--fluent-transition-normal);
+    position: relative;
+    overflow: hidden;
+}
+
+.year-selector::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--fluent-primary), var(--fluent-secondary));
+}
+
+.year-selector:hover {
+    box-shadow: var(--fluent-card-shadow-hover);
+    transform: translateY(-2px);
+    border-color: var(--fluent-border-focus);
+}
+
+.year-selector h2 {
+    color: var(--fluent-text-primary);
+    font-size: 22px;
+    margin: 0 0 20px 0;
+    text-align: center;
+    font-weight: 600;
+}
+
+.year-inputs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group label {
+    font-weight: 500;
+    color: var(--fluent-text-primary);
+    margin-bottom: 6px;
+    font-size: 14px;
+}
+
+.input-group input {
+    padding: 8px 12px;
+    border: 1px solid var(--fluent-border-secondary);
+    border-radius: var(--fluent-radius-large);
+    font-size: 14px;
+    transition: var(--fluent-transition-fast);
+    background: var(--fluent-surface-primary);
+    color: var(--fluent-text-primary);
+    min-height: 32px;
+}
+
+.input-group input:focus {
+    border-color: var(--fluent-border-focus);
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(22, 101, 52, 0.1);
+    transform: translateY(-1px);
+}
+
+.input-group input:hover {
+    border-color: var(--fluent-border-focus);
+}
+
+.input-group input[readonly] {
+    background-color: var(--fluent-surface-tertiary);
+    color: var(--fluent-primary);
+    font-weight: 500;
+    cursor: not-allowed;
+}
+
+.current-year {
+    background: var(--fluent-surface-tertiary);
+    padding: 12px;
+    border-radius: var(--fluent-radius-large);
+    text-align: center;
+    color: var(--fluent-primary);
+    font-weight: 500;
+    border: 1px solid var(--fluent-border-primary);
+}
+
+/* Form Container - Fluent Design */
+.form-container {
+    background: var(--fluent-surface-primary);
+    padding: 32px;
+    border-radius: var(--fluent-radius-xxlarge);
+    box-shadow: var(--fluent-card-shadow);
+    margin-bottom: 24px;
+    border: 2px solid var(--fluent-border-primary);
+    transition: var(--fluent-transition-normal);
+    position: relative;
+    overflow: hidden;
+}
+
+.form-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--fluent-secondary), var(--fluent-accent));
+}
+
+.form-container:hover {
+    box-shadow: var(--fluent-card-shadow-hover);
+    transform: translateY(-2px);
+    border-color: var(--fluent-border-focus);
+}
+
+.form-container h2 {
+    color: var(--fluent-text-primary);
+    font-size: 22px;
+    margin: 0 0 24px 0;
+    text-align: center;
+    font-weight: 600;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 500;
+    color: var(--fluent-text-primary);
+    margin-bottom: 6px;
+    font-size: 14px;
+}
+
+.form-group select {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid var(--fluent-border-secondary);
+    border-radius: var(--fluent-radius-large);
+    font-size: 14px;
+    background: var(--fluent-surface-primary);
+    transition: var(--fluent-transition-fast);
+    color: var(--fluent-text-primary);
+    min-height: 32px;
+}
+
+.form-group select:focus {
+    border-color: var(--fluent-border-focus);
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(22, 101, 52, 0.1);
+    transform: translateY(-1px);
+}
+
+.form-group select:hover {
+    border-color: var(--fluent-border-focus);
+}
+
+/* Categories - Fluent Design */
+.categories-section h3 {
+    color: var(--fluent-text-primary);
+    font-size: 20px;
+    margin: 24px 0 20px 0;
+    text-align: center;
+    font-weight: 600;
+}
+
+.categories-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    margin-bottom: 24px;
+}
+
+.category-item {
+    background: var(--fluent-surface-primary);
+    padding: 20px;
+    border-radius: var(--fluent-radius-xlarge);
+    border: 2px solid var(--fluent-border-primary);
+    transition: var(--fluent-transition-normal);
+    box-shadow: var(--fluent-card-shadow);
+    position: relative;
+    overflow: hidden;
+}
+
+.category-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--fluent-primary), var(--fluent-secondary));
+}
+
+.category-item:hover {
+    border-color: var(--fluent-border-focus);
+    box-shadow: var(--fluent-card-shadow-hover);
+    transform: translateY(-3px);
+}
+
+.category-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.category-header i {
+    color: var(--fluent-primary);
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+.category-header h4 {
+    color: var(--fluent-text-primary);
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.category-input {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid var(--fluent-border-secondary);
+    border-radius: var(--fluent-radius-large);
+    font-size: 14px;
+    transition: var(--fluent-transition-fast);
+    background: var(--fluent-surface-primary);
+    color: var(--fluent-text-primary);
+    min-height: 32px;
+}
+
+.category-input:focus {
+    border-color: var(--fluent-border-focus);
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(22, 101, 52, 0.1);
+    transform: translateY(-1px);
+}
+
+.category-input:hover {
+    border-color: var(--fluent-border-focus);
+}
+
+.category-input.valid {
+    border-color: var(--fluent-success);
+    background-color: rgba(16, 124, 16, 0.05);
+}
+
+.category-input.invalid {
+    border-color: var(--fluent-error);
+    background-color: rgba(209, 52, 56, 0.05);
+}
+
+/* Form Actions - Fluent Design */
+.form-actions {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    margin-top: 32px;
+}
+
+/* Buttons - Fluent Design */
+.submit-btn,
+.success-btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: var(--fluent-radius-xlarge);
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--fluent-transition-normal);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-height: 48px;
+    box-shadow: var(--fluent-card-shadow);
+    position: relative;
+    overflow: hidden;
+}
+
+.submit-btn::before,
+.success-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--fluent-surface-primary);
+    opacity: 0;
+    transition: var(--fluent-transition-fast);
+}
+
+.submit-btn:hover::before,
+.success-btn:hover::before {
+    opacity: 0.1;
+}
+
+.submit-btn {
+    background: linear-gradient(135deg, var(--fluent-primary), var(--fluent-primary-dark));
+    color: var(--fluent-text-on-primary);
+}
+
+.submit-btn:hover:not(:disabled) {
+    background: linear-gradient(135deg, var(--fluent-primary-dark), var(--fluent-primary));
+    transform: translateY(-3px);
+    box-shadow: var(--fluent-card-shadow-hover);
+}
+
+.submit-btn:active:not(:disabled) {
+    transform: translateY(-1px);
+    box-shadow: var(--fluent-card-shadow);
+}
+
+.submit-btn:disabled {
+    background: var(--fluent-text-disabled);
+    cursor: not-allowed;
+    opacity: 0.6;
+    transform: none;
+}
+
+.success-btn {
+    background: linear-gradient(135deg, var(--fluent-success), #2d7a2d);
+    color: var(--fluent-text-on-primary);
+}
+
+.success-btn:hover:not(:disabled) {
+    background: linear-gradient(135deg, #2d7a2d, var(--fluent-success));
+    transform: translateY(-3px);
+    box-shadow: var(--fluent-card-shadow-hover);
+}
+
+.success-btn:active:not(:disabled) {
+    transform: translateY(-1px);
+    box-shadow: var(--fluent-card-shadow);
+}
+
+.success-btn:disabled {
+    background: var(--fluent-text-disabled);
+    cursor: not-allowed;
+    opacity: 0.6;
+    transform: none;
+}
+
+/* Data Preview - Fluent Design */
+.data-preview {
+    background: var(--fluent-surface-primary);
+    padding: 32px;
+    border-radius: var(--fluent-radius-xxlarge);
+    box-shadow: var(--fluent-card-shadow);
+    margin-bottom: 24px;
+    border: 2px solid var(--fluent-border-primary);
+    transition: var(--fluent-transition-normal);
+    position: relative;
+    overflow: hidden;
+}
+
+.data-preview::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--fluent-accent), var(--fluent-primary));
+}
+
+.data-preview:hover {
+    box-shadow: var(--fluent-card-shadow-hover);
+    transform: translateY(-2px);
+    border-color: var(--fluent-border-focus);
+}
+
+.data-preview h3 {
+    color: var(--fluent-text-primary);
+    font-size: 20px;
+    margin: 0 0 20px 0;
+    text-align: center;
+    font-weight: 600;
+}
+
+.preview-stats {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background: var(--fluent-surface-tertiary);
+    border-radius: var(--fluent-radius-xlarge);
+    min-width: 140px;
+    border: 2px solid var(--fluent-border-primary);
+    transition: var(--fluent-transition-normal);
+    position: relative;
+    overflow: hidden;
+}
+
+.stat-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--fluent-primary), var(--fluent-secondary));
+}
+
+.stat-item:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--fluent-card-shadow);
+    border-color: var(--fluent-border-focus);
+}
+
+.stat-item span:first-child {
+    font-size: 14px;
+    color: var(--fluent-text-secondary);
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.stat-item span:last-child {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--fluent-primary);
+}
+
+/* Responsive Design - Fluent */
+@media (max-width: 768px) {
+    .year-inputs {
+        grid-template-columns: 1fr;
+    }
+
+    .categories-container {
+        grid-template-columns: 1fr;
+    }
+
+    .form-actions {
+        flex-direction: column;
+    }
+
+    .preview-stats {
+        flex-direction: column;
+        gap: 12px;
+    }
+}
+
+@media (max-width: 576px) {
+    .page-header h1 {
+        font-size: 20px;
+    }
+
+    .year-selector h2,
+    .form-container h2 {
+        font-size: 18px;
+    }
+
+    .form-container,
+    .year-selector {
+        padding: 16px;
+    }
+}
+
+/* Ministry Logo Styles for Input Page - Fluent Design */
+.page-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--fluent-border-primary);
+}
+
+.header-logo-center {
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.ministry-logo {
+    height: 80px;
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+    transition: var(--fluent-transition-fast);
+}
+
+.ministry-logo:hover {
+    transform: scale(1.05);
+}
+
+.header-text {
+    text-align: right;
+}
+
+.header-text h1 {
+    color: var(--fluent-primary);
+    font-size: 20px;
+    margin: 0;
+    font-weight: 600;
+}
+
+/* Responsive Design for Logo in Input Page */
+@media (max-width: 768px) {
+    .page-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 12px;
+    }
+
+    .ministry-logo {
+        height: 60px;
+    }
+
+    .header-text h1 {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .ministry-logo {
+        height: 50px;
+    }
+
+    .header-text h1 {
+        font-size: 16px;
+    }
+}
