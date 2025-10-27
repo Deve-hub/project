@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إعدادات التخصيص - نظام إحصائيات التقاعد</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/themes.css">
+    <link rel="stylesheet" href="css/settings.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="nav-bar">
+            <a href="input.html"><i class="fas fa-pen-to-square"></i> إدخال البيانات</a>
+            <a href="dashboard.html"><i class="fas fa-chart-pie"></i> لوحة العرض</a>
+            <a href="settings.html" class="active"><i class="fas fa-cog"></i> الإعدادات</a>
+        </div>
+
+        <div class="page-header">
+            <div class="header-text">
+                <h1><i class="fas fa-palette"></i> إعدادات التخصيص</h1>
+                <p>قم بتخصيص مظهر النظام حسب تفضيلاتك</p>
+            </div>
+        </div>
+
+        <!-- قسم اختيار الألوان -->
+        <div class="color-section">
+            <h2><i class="fas fa-palette"></i> اختيار الألوان</h2>
+
+            <!-- مجموعات الألوان الجاهزة -->
+            <div class="color-schemes">
+                <h3>مجموعات الألوان الجاهزة</h3>
+                <div class="scheme-grid">
+                    <div class="scheme-card" data-scheme="saudi-green">
+                        <div class="scheme-preview saudi-green-scheme">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                        <h4>الأخضر السعودي</h4>
+                        <button class="select-scheme-btn" data-scheme="saudi-green">اختيار</button>
+                    </div>
+
+                    <div class="scheme-card" data-scheme="royal-blue">
+                        <div class="scheme-preview royal-blue-scheme">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                        <h4>الأزرق الملكي</h4>
+                        <button class="select-scheme-btn" data-scheme="royal-blue">اختيار</button>
+                    </div>
+
+                    <div class="scheme-card" data-scheme="deep-purple">
+                        <div class="scheme-preview deep-purple-scheme">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                        <h4>البنفسجي العميق</h4>
+                        <button class="select-scheme-btn" data-scheme="deep-purple">اختيار</button>
+                    </div>
+
+                    <div class="scheme-card" data-scheme="warm-orange">
+                        <div class="scheme-preview warm-orange-scheme">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                        <h4>البرتقالي الدافئ</h4>
+                        <button class="select-scheme-btn" data-scheme="warm-orange">اختيار</button>
+                    </div>
+
+                    <div class="scheme-card" data-scheme="elegant-gold">
+                        <div class="scheme-preview elegant-gold-scheme">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                        <h4>الذهبي الأنيق</h4>
+                        <button class="select-scheme-btn" data-scheme="elegant-gold">اختيار</button>
+                    </div>
+
+                    <div class="scheme-card" data-scheme="modern-teal">
+                        <div class="scheme-preview modern-teal-scheme">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                        <h4>التركوازي الحديث</h4>
+                        <button class="select-scheme-btn" data-scheme="modern-teal">اختيار</button>
+                    </div>
+
+                    <div class="scheme-card" data-scheme="soft-pink">
+                        <div class="scheme-preview soft-pink-scheme">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                        <h4>الوردي الناعم</h4>
+                        <button class="select-scheme-btn" data-scheme="soft-pink">اختيار</button>
+                    </div>
+
+                    <div class="scheme-card" data-scheme="gradient-sunset">
+                        <div class="scheme-preview gradient-sunset-scheme">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                        <h4>غروب الشمس</h4>
+                        <button class="select-scheme-btn" data-scheme="gradient-sunset">اختيار</button>
+                    </div>
+
+                    <div class="scheme-card" data-scheme="luxury-emerald">
+                        <div class="scheme-preview luxury-emerald-scheme">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                        <h4>الزمردي الفاخر</h4>
+                        <button class="select-scheme-btn" data-scheme="luxury-emerald">اختيار</button>
+                    </div>
+
+                    <div class="scheme-card" data-scheme="ocean-breeze">
+                        <div class="scheme-preview ocean-breeze-scheme">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                        <h4>نسمة المحيط</h4>
+                        <button class="select-scheme-btn" data-scheme="ocean-breeze">اختيار</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- تخصيص الألوان -->
+            <div class="custom-colors">
+                <h3>تخصيص الألوان</h3>
+                <div class="color-controls">
+                    <div class="color-group">
+                        <label for="primaryColor">اللون الأساسي:</label>
+                        <input type="color" id="primaryColor" value="#166534" class="color-input">
+                        <span class="color-value">#166534</span>
+                    </div>
+                    <div class="color-group">
+                        <label for="secondaryColor">اللون الثانوي:</label>
+                        <input type="color" id="secondaryColor" value="#15803D" class="color-input">
+                        <span class="color-value">#15803D</span>
+                    </div>
+                    <div class="color-group">
+                        <label for="accentColor">لون التمييز:</label>
+                        <input type="color" id="accentColor" value="#059669" class="color-input">
+                        <span class="color-value">#059669</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- معاينة التصميم -->
+            <div class="design-preview-large">
+                <h3>معاينة التصميم</h3>
+                <div class="preview-container" id="designPreviewLarge">
+                    <div class="preview-nav"></div>
+                    <div class="preview-cards">
+                        <div class="preview-card-large"></div>
+                        <div class="preview-card-large"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- أزرار الإجراءات -->
+        <div class="settings-actions">
+            <button class="reset-settings-btn" onclick="resetThemeSettings()">
+                <i class="fas fa-undo"></i> استعادة الافتراضي
+            </button>
+        </div>
+
+        <!-- رسائل التأكيد -->
+        <div id="successMessage" class="success-message" style="display: none;">
+            <i class="fas fa-check-circle"></i>
+            <span>تم حفظ الإعدادات بنجاح!</span>
+        </div>
+
+        <div id="errorMessage" class="error-message" style="display: none;">
+            <i class="fas fa-exclamation-circle"></i>
+            <span>حدث خطأ أثناء حفظ الإعدادات!</span>
+        </div>
+    </div>
+
+    <script src="js/settings.js"></script>
+</body>
+
+</html>

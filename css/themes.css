@@ -1,0 +1,68 @@
+/* متغيرات الألوان الأساسية */
+:root {
+    /* الألوان الأساسية */
+    --fluent-primary: #166534;
+    --fluent-primary-dark: #14532D;
+    --fluent-primary-light: #15803D;
+    --fluent-secondary: #15803D;
+    --fluent-secondary-dark: #166534;
+    --fluent-secondary-light: #059669;
+    --fluent-accent: #059669;
+    --fluent-accent-light: #10B981;
+
+    /* ألوان النصوص */
+    --fluent-text-primary: #2D3748;
+    --fluent-text-secondary: #4A5568;
+    --fluent-text-tertiary: #718096;
+    --fluent-text-on-primary: #FFFFFF;
+
+    /* ألوان الخلفيات */
+    --fluent-background-primary: #FFFFFF;
+    --fluent-background-secondary: #F8FAFC;
+    --fluent-background-tertiary: #F1F5F9;
+
+    /* ألوان السطوح */
+    --fluent-surface-primary: #FFFFFF;
+    --fluent-surface-secondary: #F8FAFC;
+    --fluent-surface-tertiary: #F1F5F9;
+
+    /* ألوان الحدود */
+    --fluent-border-primary: #E2E8F0;
+    --fluent-border-secondary: #CBD5E1;
+    --fluent-border-focus: #166534;
+
+    /* ألوان الحالة */
+    --fluent-success: #059669;
+    --fluent-success-light: #ECFDF5;
+    --fluent-error: #DC2626;
+    --fluent-error-light: #FEF2F2;
+    --fluent-warning: #D97706;
+    --fluent-warning-light: #FFFBEB;
+    --fluent-info: #0284C7;
+    --fluent-info-light: #F0F9FF;
+
+    /* الظلال */
+    --fluent-shadow-1: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --fluent-shadow-2: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+    --fluent-shadow-3: 0 4px 6px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.06);
+    --fluent-shadow-4: 0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05);
+    --fluent-shadow-8: 0 25px 50px rgba(0, 0, 0, 0.15);
+
+    /* الانتقالات */
+    --fluent-transition-fast: all 0.15s ease;
+    --fluent-transition-normal: all 0.25s ease;
+    --fluent-transition-slow: all 0.35s ease;
+
+    /* نصف القطر */
+    --fluent-radius-small: 4px;
+    --fluent-radius-medium: 8px;
+    --fluent-radius-large: 12px;
+    --fluent-radius-xlarge: 16px;
+    --fluent-radius-xxlarge: 24px;
+
+    /* ظلال البطاقات */
+    --fluent-card-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+    --fluent-card-shadow-hover: 0 4px 6px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.06);
+}
+
+/* أنماط الألوان المختلفة */

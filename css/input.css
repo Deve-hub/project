@@ -556,7 +556,7 @@
 }
 
 .header-text h1 {
-    color: var(--fluent-primary);
+    color: var(--fluent-text-primary);
     font-size: 20px;
     margin: 0;
     font-weight: 600;
