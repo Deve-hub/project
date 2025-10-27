@@ -1,0 +1,227 @@
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة العرض - نظام إحصائيات التقاعد</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script> <!-- للتسميات داخل الرسوم -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="nav-bar">
+            <a href="input.html"><i class="fas fa-pen-to-square"></i> إدخال البيانات</a>
+            <a href="dashboard.html"><i class="fas fa-chart-pie"></i> لوحة العرض</a>
+        </div>
+
+        <div class="header-section">
+            <div class="header-left">
+                <div class="header-text">
+                    <h1>الرواتب والبدلات</h1>
+                </div>
+            </div>
+            <div class="header-logo-center">
+                <img src="logo/logo.png" alt="شعار وزارة التربية والتعليم" class="ministry-logo">
+            </div>
+            <div class="header-right">
+                <div class="header-year">
+                    <h2 id="report-period"> إحصائيات سنة 1445 (هجرية)</h2>
+                </div>
+                <div class="header-actions">
+                    <button id="printBtn" class="print-btn" onclick="printReport()">
+                        <i class="fas fa-print"></i> طباعة التقرير
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- عرض الإحصائيات الشاملة -->
+        <div id="statsDisplay" class="stats" style="display: none;">
+            <div class="stat-card">
+                <h3><i class="fas fa-users"></i> إجمالي المتقاعدين</h3>
+                <p id="totalCount">0</p>
+            </div>
+            <div class="stat-card">
+                <h3><i class="fas fa-chart-pie"></i> توزيع حسب النوع</h3>
+                <ul id="typeList">
+                    <!-- سيتم ملؤها ديناميكياً -->
+                </ul>
+            </div>
+            <div class="stat-card">
+                <h3><i class="fas fa-tags"></i> توزيع حسب الفئة</h3>
+                <ul id="categoryList">
+                    <!-- سيتم ملؤها ديناميكياً -->
+                </ul>
+            </div>
+        </div>
+
+        <!-- عرض البيانات حسب النوع -->
+        <div id="displayByType" style="display: block;">
+            <h2 class="section-title">أنواع المتقاعدين</h2>
+            <div class="type-content">
+                <div class="table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>نوع التقاعد</th>
+                                <th>العدد</th>
+                                <th>النسبة المئوية</th>
+                            </tr>
+                        </thead>
+                        <tbody id="typeTable">
+                            <!-- سيتم ملؤها ديناميكياً -->
+                        </tbody>
+                        <tfoot>
+                            <!-- سيتم ملؤها ديناميكياً -->
+                        </tfoot>
+                    </table>
+                </div>
+
+                <!-- الرسم البياني للنوع -->
+                <div class="chart-container">
+                    <canvas id="typeChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <!-- عرض البيانات حسب الفئة -->
+        <div id="displayByCategory" style="display: block;">
+            <h2 class="section-title">فئات المتقاعدين</h2>
+            <div class="category-content">
+                <div class="table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>فئة المتقاعدين</th>
+                                <th>العدد</th>
+                                <th>النسبة المئوية</th>
+                            </tr>
+                        </thead>
+                        <tbody id="categoryTable">
+                            <!-- سيتم ملؤها ديناميكياً -->
+                        </tbody>
+                        <tfoot>
+                            <!-- سيتم ملؤها ديناميكياً -->
+                        </tfoot>
+                    </table>
+                </div>
+
+                <!-- الرسم البياني للفئة -->
+                <div class="chart-container">
+                    <canvas id="categoryChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <!-- قسم المعلمين -->
+        <div id="teachersMaleSection" style="display: block;">
+            <h2 class="section-title"> إحصائيات المعلمين</h2>
+            <div class="type-content">
+                <div class="table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>نوع التقاعد</th>
+                                <th>العدد</th>
+                                <th>النسبة المئوية</th>
+                            </tr>
+                        </thead>
+                        <tbody id="teachersMaleTable">
+                            <!-- سيتم ملؤها ديناميكياً -->
+                        </tbody>
+                        <tfoot>
+                            <!-- سيتم ملؤها ديناميكياً -->
+                        </tfoot>
+                    </table>
+                </div>
+
+                <!-- الرسم البياني للمعلمين -->
+                <div class="chart-container">
+                    <canvas id="teachersMaleChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <!-- قسم المعلمات -->
+        <div id="teachersFemaleSection" style="display: block;">
+            <h2 class="section-title"> إحصائيات المعلمات</h2>
+            <div class="category-content">
+                <div class="table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>نوع التقاعد</th>
+                                <th>العدد</th>
+                                <th>النسبة المئوية</th>
+                            </tr>
+                        </thead>
+                        <tbody id="teachersFemaleTable">
+                            <!-- سيتم ملؤها ديناميكياً -->
+                        </tbody>
+                        <tfoot>
+                            <!-- سيتم ملؤها ديناميكياً -->
+                        </tfoot>
+                    </table>
+                </div>
+
+                <!-- الرسم البياني للمعلمات -->
+                <div class="chart-container">
+                    <canvas id="teachersFemaleChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <!-- الجدول التفصيلي -->
+        <div id="detailedTableSection" style="display: block;">
+            <h2 class="section-title"> الجدول التفصيلي للمتقاعدين</h2>
+            <div class="table-container">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th rowspan="2">نوع التقاعد</th>
+                            <th colspan="5">فئات المتقاعدين</th>
+                            <th rowspan="2">الإجمالي</th>
+                            <th rowspan="2">النسبة المئوية</th>
+                        </tr>
+                        <tr>
+                            <th>إداريين</th>
+                            <th>أجور</th>
+                            <th>مستخدمين</th>
+                            <th>معلمين</th>
+                            <th>معلمات</th>
+                        </tr>
+                    </thead>
+                    <tbody id="dataTable">
+                        <!-- سيتم ملؤها ديناميكياً -->
+                    </tbody>
+                    <tfoot>
+                        <!-- سيتم ملؤها ديناميكياً -->
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+
+        <!-- أزرار التحكم (مخفية) -->
+        <div id="controls" class="controls">
+            <!-- الأزرار مخفية -->
+        </div>
+
+        <!-- رسالة عدم وجود بيانات -->
+        <div id="noData" class="no-data" style="display: none;">
+            <h3>لا توجد بيانات</h3>
+            <p>يرجى إدخال بيانات في صفحة <a href="input.html">إدخال البيانات</a> أولاً.</p>
+        </div>
+    </div>
+
+    <script src="js/dashboard.js"></script>
+
+
+</body>
+
+</html>
