@@ -1,0 +1,58 @@
+name: Deploy expense tracker to VPS
+
+on:
+  push:
+    branches: [main, claude/greeting-rlegll]
+    paths:
+      - "expense-tracker/**"
+      - ".github/workflows/expense-tracker.yml"
+  workflow_dispatch:
+
+concurrency:
+  group: expense-tracker-deploy
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+      HAS_VPS: ${{ secrets.VPS_HOST != '' }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check
+        working-directory: expense-tracker
+        run: |
+          python3 -m py_compile app.py
+          node --check public/app.js
+          bash -n deploy/install.sh
+
+      - name: VPS not configured yet
+        if: env.HAS_VPS != 'true'
+        run: echo "::notice::Add the VPS_HOST, VPS_USER, VPS_SSH_KEY and DASH_PIN secrets to deploy."
+
+      - name: Copy files
+        if: env.HAS_VPS == 'true'
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USER }}
+          key: ${{ secrets.VPS_SSH_KEY }}
+          port: ${{ secrets.VPS_PORT || 22 }}
+          source: "expense-tracker/app.py,expense-tracker/public,expense-tracker/deploy"
+          strip_components: 1
+          target: /opt/expense-tracker
+
+      - name: Install and restart
+        if: env.HAS_VPS == 'true'
+        uses: appleboy/ssh-action@v1.0.3
+        env:
+          DASH_PIN: ${{ secrets.DASH_PIN }}
+          DOMAIN: ${{ secrets.DOMAIN }}
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USER }}
+          key: ${{ secrets.VPS_SSH_KEY }}
+          port: ${{ secrets.VPS_PORT || 22 }}
+          envs: DASH_PIN,DOMAIN
+          script: bash /opt/expense-tracker/deploy/install.sh

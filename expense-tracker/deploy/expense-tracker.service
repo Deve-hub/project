@@ -1,0 +1,18 @@
+[Unit]
+Description=Expense tracker (دفتر التحصيل)
+After=network.target
+
+[Service]
+User=ledger
+EnvironmentFile=/etc/expense-tracker.env
+WorkingDirectory=/opt/expense-tracker
+ExecStart=/usr/bin/python3 /opt/expense-tracker/app.py
+Restart=always
+RestartSec=3
+NoNewPrivileges=true
+ProtectSystem=strict
+ReadWritePaths=/var/lib/expense-tracker
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target
